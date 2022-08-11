@@ -1,12 +1,7 @@
 package com.jlp.freemaker.mvc.core;
 
 
-import com.jlp.freemaker.mvc.entity.Dao;
-import com.jlp.freemaker.mvc.entity.IService;
-import com.jlp.freemaker.mvc.entity.Mapper;
-import com.jlp.freemaker.mvc.entity.Model;
-import com.jlp.freemaker.mvc.entity.ServiceImpl;
-import com.jlp.freemaker.mvc.entity.Table;
+import com.jlp.freemaker.mvc.entity.*;
 import com.jlp.freemaker.mvc.support.GenerateFactory;
 import com.jlp.freemaker.mvc.common.configuration.GenerateConfiguration;
 import com.jlp.freemaker.mvc.utils.generate.GenerateDao;
@@ -34,6 +29,8 @@ public class GeneratorBuilder {
 	private ServiceImpl serviceImpl;
 	
 	private Model model;
+
+	private Vo vo;
 	
 	private String tableComment;
 
@@ -68,6 +65,11 @@ public class GeneratorBuilder {
 		mapper.setColumnList(table.getColumnList());
 		mapper.setModelName(clazzName);
 		mapper.setPackageName(GenerateConfiguration.PKG_PREFIX+packageName);
+
+		vo = new Vo();
+		vo.setColumnList(table.getColumnList());
+		vo.setModelName(clazzName);
+		vo.setPackageName(GenerateConfiguration.PKG_PREFIX+packageName);
 	}
 	
 	/**
@@ -89,6 +91,9 @@ public class GeneratorBuilder {
 			}
 			if(condition.getMapper()) {
 				GenerateFactory.createMapper().generateFile(mapper);
+			}
+			if(condition.getVo()) {
+				GenerateFactory.createVo().generateFile(vo);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -119,6 +124,8 @@ public class GeneratorBuilder {
 		
 		private Boolean dto=false;
 
+		private Boolean vo=false;
+
 		public Condition() {
 			super();
 		}
@@ -136,6 +143,10 @@ public class GeneratorBuilder {
 			return model;
 		}
 
+		public Boolean getVo() {
+			return vo;
+		}
+
 		public Condition setModel(Boolean model) {
 			this.model = model;
 			return this;
@@ -147,6 +158,11 @@ public class GeneratorBuilder {
 
 		public Condition setDao(Boolean dao) {
 			this.dao = dao;
+			return this;
+		}
+
+		public Condition setVo(Boolean vo) {
+			this.vo = vo;
 			return this;
 		}
 

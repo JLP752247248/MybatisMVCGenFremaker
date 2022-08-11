@@ -19,6 +19,8 @@ public class GenerateConfiguration {
 	public final static String PKG_SUFFIX_MODEL = ".model";
 	/**dao包后缀*/
 	public final static String PKG_SUFFIX_Dao = ".dao";
+	/**dao包后缀*/
+	public final static String PKG_SUFFIX_Vo = ".vo";
 	/**服务包后缀*/
 	public final static String PKG_SUFFIX_SERVICE = ".service";
 	/**服务实现层*/

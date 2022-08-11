@@ -1,15 +1,7 @@
 package com.jlp.freemaker.mvc.support;
 
-import com.jlp.freemaker.mvc.entity.Dao;
-import com.jlp.freemaker.mvc.entity.IService;
-import com.jlp.freemaker.mvc.entity.Mapper;
-import com.jlp.freemaker.mvc.entity.Model;
-import com.jlp.freemaker.mvc.entity.ServiceImpl;
-import com.jlp.freemaker.mvc.utils.generate.GenerateDao;
-import com.jlp.freemaker.mvc.utils.generate.GenerateIService;
-import com.jlp.freemaker.mvc.utils.generate.GenerateMapper;
-import com.jlp.freemaker.mvc.utils.generate.GenerateModel;
-import com.jlp.freemaker.mvc.utils.generate.GenerateServiceImpl;
+import com.jlp.freemaker.mvc.entity.*;
+import com.jlp.freemaker.mvc.utils.generate.*;
 
 /**
  * 生成工厂
@@ -36,6 +28,10 @@ public class GenerateFactory {
 	 public static IGenerate<Mapper> createMapper() {
 		 return new GenerateMapper();
 	 }
+
+	public static IGenerate<Vo> createVo() {
+		return new GenerateVo();
+	}
 	 
 	 public static IGenerate<ServiceImpl> createServiceImpl() {
 		 return new GenerateServiceImpl();
