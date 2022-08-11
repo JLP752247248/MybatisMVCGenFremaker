@@ -26,13 +26,13 @@ public class GenerateVo implements IGenerate<Vo>{
         					+GenerateConfiguration.SRC_PATH
         					+StrUtils.package2path(model.getPackageName()
                 +StrUtils.DOT
-                +GenerateConfiguration.PKG_SUFFIX_Dao+StrUtils.DOT);
+                +GenerateConfiguration.PKG_SUFFIX_Vo+StrUtils.DOT);
         final String templateName = "templates/Vo.ftl";
         File pat = new File(path);
         if(!pat.exists()) {
         	pat.mkdirs();
         }
-        String filePath = path+model.getModelName()+GenerateConfiguration.JAVA_SUFFIX;
+        String filePath = path+model.getModelName()+"Vo"+GenerateConfiguration.JAVA_SUFFIX;
         File file = new File(filePath);
         FreeMarkerTemplateUtils.generateFile(templateName,file,model);
         System.out.println("生产VO");

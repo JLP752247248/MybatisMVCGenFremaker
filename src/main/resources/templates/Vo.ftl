@@ -27,9 +27,10 @@ public class ${modelName}Vo  {
         <#if columnList?exists>
             <#list columnList as model>
             /**${model.comment}*/
-           temp${modelName}.set${model.name!}(${model.name!});
+           temp${modelName}.set${model.name?cap_first}(${model.name!});
            </#list>
         </#if>
+        return temp${modelName};
     }
 }
 

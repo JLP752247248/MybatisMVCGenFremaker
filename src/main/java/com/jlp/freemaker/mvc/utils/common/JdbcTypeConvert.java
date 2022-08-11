@@ -122,6 +122,9 @@ public class JdbcTypeConvert {
 		case "BIGINT UNSIGNED":
 			javaType = "Long";
 			break;
+		case "BIGINT":
+				javaType = "Long";
+				break;
 		case "FLOAT":
 			javaType = "Float";
 			break;

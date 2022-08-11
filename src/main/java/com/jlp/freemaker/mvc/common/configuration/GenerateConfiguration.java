@@ -14,7 +14,7 @@ public class GenerateConfiguration {
 	/**工程的名称*/
 	public static final String PROJECT_PATH = "/generatecode";
 	/**包前缀*/
-	public static final String PKG_PREFIX = "com.jlp.freemaker.mvc.";
+	public static String PKG_PREFIX = "com.jlp.freemaker.mvc.";
 	/**实体包后缀*/
 	public final static String PKG_SUFFIX_MODEL = ".model";
 	/**dao包后缀*/

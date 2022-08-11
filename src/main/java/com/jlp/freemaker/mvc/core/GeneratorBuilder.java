@@ -108,7 +108,7 @@ public class GeneratorBuilder {
 	 * @see:<p>www.aixuegao.cn</p>
 	 * @since 1.0.1
 	 */
-	static class Condition{
+	public static class Condition{
 		
 		private Boolean mapper=false;
 		
@@ -201,6 +201,11 @@ public class GeneratorBuilder {
 			this.dto = dto;
 			return this;
 		}
+		public Condition setBasePackage(String basePackage) {
+			GenerateConfiguration.PKG_PREFIX = basePackage;
+			return this;
+		}
+
 	}
 	
 	/**
