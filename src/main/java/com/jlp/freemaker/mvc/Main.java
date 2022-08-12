@@ -23,7 +23,7 @@ public class Main {
         new GeneratorBuilder("", "Addr", DbMetaDataUtils.getTable("sys_addr"), "sys_addr").builder(condition);
         new GeneratorBuilder("", "Contact", DbMetaDataUtils.getTable("sys_contact"), "sys_contact").builder(condition);
         new GeneratorBuilder("", "PermInfo", DbMetaDataUtils.getTable("sys_perm"), "sys_perm").builder(condition);
-        new GeneratorBuilder("", "RoleInfo", DbMetaDataUtils.getTable("sys_role"), "sys_role").builder(condition);
+        new GeneratorBuilder(".user", "RoleInfo", DbMetaDataUtils.getTable("sys_role"), "sys_role").builder(condition);
 
     }
 }
